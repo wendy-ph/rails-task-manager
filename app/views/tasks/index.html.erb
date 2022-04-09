@@ -2,7 +2,12 @@
 
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= check_box_tag 'completed', task.completed?, task.completed? %><%= link_to task.title, task_path(task)%> <%= link_to '🗑️',
+  <li><% if task.completed? %>
+        <i class="fa-solid fa-square-check"></i>
+      <% else %>
+        <i class="fa-solid fa-square"></i>
+      <% end %>
+  <%= link_to task.title, task_path(task)%> <%= link_to '🗑️',
                                                     task_path(task),
                                                     method: :delete,
                                                     data: { confirm: "Are you sure?"}  %></li>
