@@ -6,7 +6,7 @@
   <%= f.label :details %>
   <%= f.text_field :details %>
   <%= f.label :completed %>
-  <%= check_box_tag 'completed', @task.completed?, @task.completed? %>
+  <%= f.check_box :completed? %>
   <%= f.submit %>
 <% end %>
 
